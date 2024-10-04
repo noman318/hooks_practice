@@ -1,8 +1,6 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary";
-import HomeScreen from "./Screens/HomeScreen";
 
 describe("App Component", () => {
   function spyOnConsoleError() {

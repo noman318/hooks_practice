@@ -1,9 +1,10 @@
-import Navbar from "./components/Navbar";
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { lazy, Suspense } from "react";
-import Loader from "./components/Loader";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { Hooks } from "./components/Hooks";
+import Loader from "./components/Loader";
 const HomeScreen = lazy(() => import("./Screens/HomeScreen"));
 const NotFound = lazy(() => import("./Screens/NotFound"));
 
@@ -12,10 +13,10 @@ function App() {
     <ErrorBoundary>
       <Suspense fallback={<Loader />}>
         <Router>
-          <Navbar />
+          {/* <Navbar /> */}
           <Routes>
-            <Route path="/" element={<HomeScreen />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<Hooks />} />
+            {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </Router>
       </Suspense>
